@@ -113,7 +113,7 @@ td,th,tr{
   top: 0; 
   left: 0; 
   z-index: 9999; 
-  width: 100%; 
+  width: auto; 
   height: 50px; 
   background-color: #313131;
    }
