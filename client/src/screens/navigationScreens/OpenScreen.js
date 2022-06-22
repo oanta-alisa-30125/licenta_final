@@ -271,10 +271,10 @@ export default function OpenScreen() {
                            
                         <h1 style={{fontSize:"40px", color:'lightslategray'}}>Urmărește-ne pe </h1>
                         <div className="fb-page ml-5" data-href="https://www.facebook.com/TraideMaramures/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><a href="https://www.facebook.com/TraideMaramures/"><i class="fa-brands fa-facebook-f fa-2x"></i></a></div>
-                        <div className="ig-page ml-5" data-href="http://www.instagram.com/traidemaramures/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><a href="http://www.instagram.com/traidemaramures/"><i class="fa-brands fa-instagram fa-2x"></i></a></div>
+                        <div className="ig-page ml-3" data-href="http://www.instagram.com/traidemaramures/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><a href="http://www.instagram.com/traidemaramures/"><i class="fa-brands fa-instagram fa-2x"></i></a></div>
                        
                         
-                        <h1 style={{fontSize:"40px", color:'lightslategray', marginLeft:'170px'}}> Sau vizitează-ne</h1>
+                        <h1 style={{fontSize:"40px", color:'lightslategray', marginLeft:'auto'}}>Sau vizitează-ne</h1>
                         <div className="mapouter ml-5 mb-3"><div class="gmap_canvas"><iframe width="460" height="142" id="gmap_canvas" src="https://maps.google.com/maps?q=strada%20unirii%202a%20Ocna%20sugatag&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><a href="https://www.embedgooglemap.net">copy google map</a></div></div>
                     
                         </div>
