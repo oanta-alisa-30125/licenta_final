@@ -126,5 +126,10 @@ td,th,tr{
             1px -1px 0 #000,
             -1px -1px 0 #000;
   }
+
+  .fa-bars
+  {
+    color: white;
+  }
 .mapouter{position:relative;text-align:right;height:142px;width:460px;}
 .gmap_canvas {overflow:hidden;background:none!important;height:142px;width:460px;}

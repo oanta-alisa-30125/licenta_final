@@ -11,7 +11,7 @@ export default function Navbar() {
             <nav class="navbar fixed-navbar navbar-expand-lg" style={{position: 'sticky', top: '0'}} > 
                 <a style={{color:'white'}} className="navbar-brand" href="/">Food Land</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <i className="fa-solid fa-bars"><span className="navbar-toggler-icon"></span></i>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav ml-auto">
