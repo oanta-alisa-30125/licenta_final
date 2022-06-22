@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@200&display=swap');
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lilita One', cursive;
+font-family: 'Montserrat', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1{
+  font-size:20px !important;
+}
+
+.flex-container{
+  display: flex !important;
+}
+
+.btn{
+background-color: rgb(102, 102, 102) !important;
+color: white !important;
+}
+
+select{
+  box-shadow: none !important;
+  border-color: rgb(102, 102, 102) !important;
+}
+
+.fa-plus{
+  color:rgb(57, 162, 57);
+  margin:5px;
+}
+
+.fa-minus{
+  color:rgb(197, 50, 50);
+  margin:5px;
+}
+
+.fa-trash{
+  color:rgb(155, 18, 18);
+}
+
+input{
+  margin-top: 10px !important;
+  box-shadow: none !important;
+}
+
+.adminfunctions{
+  padding: 10px;
+  background-color: rgba(41, 37, 37, 0.605);
+}
+
+.adminfunctions li{
+  list-style-type: none !important;
+  display:inline !important;
+  color: white!important;
+}
+
+.adminfunctions li a{
+  color: white !important;
+  padding: 20px;
+}
+
+td,th,tr{
+  text-align: left;
+}
+
+
+#home_section{
+  background-color: #383535;
+  height: 110vh;
+  padding-top: 70px;
+  width: auto;
+
+}
+
+#orar_section{
+  background-image: url("https://img.freepik.com/free-photo/tasty-pepperoni-pizza-black-concrete-background_79782-102.jpg?w=1380");
+}
+
+#aboutus_section{
+  background-color: #383535 ;
+}
+
+
+
+#contact_section{
+  background-image:url("https://pizzatomorrow.com/wp-content/uploads/2021/11/HeroBackground_PT.jpg");
+}
+
+.navbar{
+  
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  z-index: 9999; 
+  width: 100%; 
+  height: 50px; 
+  
+}
+.fixed-navbar { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 9999; 
+  width: 100%; 
+  height: 50px; 
+  background-color: #313131;
+   }
+
+   #shadowww{
+    color: "ehiteSmoke";
+    font-size: 40px;
+    text-shadow: -1px 1px 2px #000,
+            1px 1px 2px #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000;
+  }
+.mapouter{position:relative;text-align:right;height:142px;width:460px;}
+.gmap_canvas {overflow:hidden;background:none!important;height:142px;width:460px;}
