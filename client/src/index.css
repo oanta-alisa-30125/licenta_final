@@ -131,5 +131,5 @@ td,th,tr{
   {
     color: white;
   }
-.mapouter{position:relative;text-align:right;height:142px;width:460px;}
-.gmap_canvas {overflow:hidden;background:none!important;height:142px;width:460px;}
+  .mapouter{position:relative;text-align:right;height:125px;width:251px;}
+  .gmap_canvas {overflow:hidden;background:none!important;height:125px;width:251px;}

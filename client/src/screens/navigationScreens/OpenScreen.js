@@ -274,9 +274,10 @@ export default function OpenScreen() {
                         <div className="ig-page ml-3" data-href="http://www.instagram.com/traidemaramures/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><a href="http://www.instagram.com/traidemaramures/"><i class="fa-brands fa-instagram fa-2x"></i></a></div>
                        
                         
-                        <h1 style={{fontSize:"40px", color:'lightslategray', marginLeft:'auto'}}>Sau vizitează-ne</h1>
-                        <div className="mapouter ml-5 mb-3"><div class="gmap_canvas"><iframe width="460" height="142" id="gmap_canvas" src="https://maps.google.com/maps?q=strada%20unirii%202a%20Ocna%20sugatag&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><a href="https://www.embedgooglemap.net">copy google map</a></div></div>
-                    
+                        <h1 style={{fontSize:"40px", color:'lightslategray'}}>Sau vizitează-ne</h1>
+                        <div className="mapouter ml-3"><div className="gmap_canvas"><iframe width="251" height="125" id="gmap_canvas" src="https://maps.google.com/maps?q=ocna%20sugatag,%20unirii%202A&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br/>
+                        <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                        </div></div>
                         </div>
                     </div>
                     
