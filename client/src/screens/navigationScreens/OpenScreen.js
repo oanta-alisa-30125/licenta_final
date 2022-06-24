@@ -96,7 +96,7 @@ export default function OpenScreen() {
 
         <>
            
-            <div id="home_section" className='row landing'  style={{ backgroundImage:`url(${landing})`, backgroundPosition: 'center',backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width: '100vw',
+           <div id="home_section" className='row landing'  style={{ backgroundImage:`url(${landing})`, backgroundPosition: 'center',backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width: '100vw',
         height: '95vh'}}>
                 <div className='col-md-12'>
                     <h2 id="shadowww" style={{ color: 'whiteSmoke', fontSize: '130px' ,fontFamily:'georgia'}}>Food Land</h2>
@@ -125,6 +125,7 @@ export default function OpenScreen() {
                 </div>
 
             </div>
+        
         
 
         

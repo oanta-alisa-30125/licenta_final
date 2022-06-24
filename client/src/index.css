@@ -8,10 +8,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Lilita One', cursive;
 font-family: 'Montserrat', sans-serif;
+
+
 }
 
 html{
   scroll-behavior: smooth;
+
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -119,7 +122,7 @@ td,th,tr{
    }
 
    #shadowww{
-    color: "ehiteSmoke";
+    color: "whiteSmoke";
     font-size: 40px;
     text-shadow: -1px 1px 2px #000,
             1px 1px 2px #000,
