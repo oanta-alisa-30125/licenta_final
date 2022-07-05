@@ -14,9 +14,9 @@ export default function Orderslist(){
         <div>
             <h1>Listă comenzi</h1>
             {loading&&(<Loading/>)}
-            {error&&(<Error error='Something went wrong'/>)}
-        <table className='table table-striped table-bordered'>
-            <thead className='thead-dark'>
+            {error&&(<Error error='Eroare'/>)}
+        <table className='table table-hover'>
+            <thead>
                 <tr>
                     <th>Id comandă</th>
                     <th>Email</th>
@@ -35,7 +35,14 @@ export default function Orderslist(){
                         <td>{order.orderAmount}</td>
                         <td>{order.createdAt.substring(0,10)}</td>
                         <td>
-                        {order.isDelivered ?(<h1>Comandă livrată</h1>):(<button className='btn' onClick={()=>{dispatch(deliverOrder(order._id))}}>Livrează</button>)}
+
+                        {order.isDelivered ?
+                        (<h1>Comandă livrată</h1>):
+                        (<button className='btn' 
+                        onClick={()=>{dispatch(deliverOrder(order._id))}}>
+                            Livrează
+                        </button>)}
+                        
                         </td>
                     </tr>
                 }))}

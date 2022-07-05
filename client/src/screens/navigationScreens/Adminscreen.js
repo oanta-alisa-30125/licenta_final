@@ -87,7 +87,7 @@ export default function Adminscreen() {
               </ul>
 
               <BrowserRouter>
-              <Route path='/admin' component={Userslist} exact/>
+             
 
                   <Route path='/admin/userslist' component={Userslist} exact/>
                   <Route path='/admin/orderslist' component={Orderslist} exact/>

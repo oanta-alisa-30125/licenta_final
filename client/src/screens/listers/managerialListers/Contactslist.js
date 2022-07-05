@@ -15,8 +15,8 @@ export default function Contactslist(){
             <h1>Listă mesaje</h1>
             {loading&&(<Loading/>)}
             {error&&(<Error error='Something went wrong'/>)}
-        <table className='table table-striped table-bordered'>
-            <thead className='thead-dark'>
+        <table className='table table-hover'>
+            <thead>
                 <tr>
                     <th>Id contact</th>
                     <th>Nume</th>

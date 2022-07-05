@@ -3,7 +3,7 @@ export const newBook=(book)=>async dispatch=>{
 
     dispatch({type:'BOOKING_REQUEST'})
     try{
-        const response=await axios.post('/api/books/newbooking',book) //asa trimitem datele catre backend
+        const response=await axios.post('/api/books/newbooking',book) 
         alert("Rezervarea a fost realizată cu succes!")
         dispatch({type:'BOOKING_SUCCESS'})
     }catch (error){
@@ -30,7 +30,7 @@ export const deleteBook=(bookid)=>async dispatch=>{
         alert('Rezervare ștearsă cu succes')
         window.location.reload()
     }catch(error){
-        alert('something went wrong')
+        alert('eroare')
         console.log(error)
     }
 }

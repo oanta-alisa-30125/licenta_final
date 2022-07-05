@@ -12,6 +12,7 @@ font-family: 'Montserrat', sans-serif;
 
 }
 
+
 html{
   scroll-behavior: smooth;
 
@@ -89,16 +90,19 @@ td,th,tr{
 
 #orar_section{
   background-image: url("https://img.freepik.com/free-photo/tasty-pepperoni-pizza-black-concrete-background_79782-102.jpg?w=1380");
+
 }
 
 #aboutus_section{
   background-color: #383535 ;
+
 }
 
 
 
 #contact_section{
   background-image:url("https://pizzatomorrow.com/wp-content/uploads/2021/11/HeroBackground_PT.jpg");
+  
 }
 
 .navbar{

@@ -14,9 +14,9 @@ export default function Bookslist(){
         <div>
             <h1>Listă rezervări</h1>
             {loading&&(<Loading/>)}
-            {error&&(<Error error='Something went wrong'/>)}
-        <table className='table table-striped table-bordered'>
-            <thead className='thead-dark'>
+            {error&&(<Error error='Eroare'/>)}
+        <table className='table table-hover'>
+            <thead>
                 <tr>
                     <th>Id rezervare</th>
                     <th>Email</th>

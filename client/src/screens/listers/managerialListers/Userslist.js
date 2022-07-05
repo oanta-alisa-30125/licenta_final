@@ -6,28 +6,31 @@ import {getAllUsers,deleteUser} from '../../../actions/managerialActions/userAct
 
 export default function Userlist(){
     const dispatch=useDispatch()
+    
     const usersstate=useSelector(state=>state.getAllUsersReducer)
     const{error,loading,users}=usersstate
 
     useEffect(()=>{
         dispatch(getAllUsers())
     },[])
+
     return(
         <div>
             <h2>Listă utilizatori</h2>
             {loading&&(<Loading/>)}
             {error&&(<Error error='Something went wrong'/>)}
-        <table className='table table-striped table-bordered'>
-            <thead className='thead-dark'>
+    <table className="table table-hover">
+            <thead>
                 <tr>
-                    <th>Id utilizator</th>
-                    <th>Nume</th>
-                    <th>Email</th>
-                    <th>Șterge</th>
+                    <th scope="col">Id utilizator</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Șterge</th>
                 </tr>
             </thead>
             <tbody>
-                {users&&users.map(user=>{//conditional rendering if users is present then user.map
+                {users&&users.map(user=>
+                {//conditional rendering if users is present then user.map
                     return <tr>
                         <td>{user._id}</td>
                         <td>{user.name}</td>
@@ -37,6 +40,7 @@ export default function Userlist(){
                 })}
             </tbody>
         </table>
+  
         
         </div>
     )

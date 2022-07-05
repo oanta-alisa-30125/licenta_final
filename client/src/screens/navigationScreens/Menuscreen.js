@@ -84,8 +84,6 @@ export default function Menuscreen() {
              
             <div className='row justify-content-center'>
 
-                
-
                 {loading ? (<Loading/>): error ? (<Error error='Something went wrong'/>) : (
                         
                         pizzas.map((pizza) => {
