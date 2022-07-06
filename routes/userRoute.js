@@ -62,4 +62,15 @@ router.post("/deleteuser",async(req,res)=>{
     }
 });
 
+router.post("/makeadmin",async(req,res)=>{
+    const userid=req.body.userid
+    try{
+        const user=await User.findOne({_id:userid})
+        user.isAdmin=true
+        await user.save()
+        res.send('user is admin')
+    }catch(error){
+        return res.status(400).json({message:'something went wrong'})
+    }
+});
 module.exports=router

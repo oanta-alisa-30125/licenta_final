@@ -6,7 +6,6 @@ import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
-
 import {BrowserRouter, Route, Routes, Link, Switch} from 'react-router-dom'//trebuiesc importate 
 import Navbar from './components/layoutComponents/Navbar';
 import Menuscreen from './screens/navigationScreens/Menuscreen';
@@ -26,6 +25,7 @@ function App() {
   const { currentUser } = userstate
   return (
     <div className="App">
+     
       <Navbar/>
   
     <BrowserRouter>

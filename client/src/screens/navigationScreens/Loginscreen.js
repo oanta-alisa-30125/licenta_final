@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useRef } from 'react'
+
 import {useDispatch,useSelector} from 'react-redux'
 import { loginUser } from '../../actions/managerialActions/userActions'
 import Loading from  '../../components/layoutComponents/Loading'
@@ -9,12 +10,12 @@ export default function Loginscreen(){
     const [password, setpassword] = useState("");
     const [passwordShown, setPasswordShown] = useState(false);
     const dispatch=useDispatch()
+   
    //if the user is already present in the aplication o sa fie redirectionat catre home page:
     const loginstate=useSelector(state=>state.loginUserReducer)
     const {loading,error}=loginstate //nu ne mai intereseaza de succes pt ca daca este success o sa fie direct redirectionat catre homepage
         // Initialize a boolean state
-        
-    
+      
         const Password = () => {
           setPasswordShown(!passwordShown);
         };
@@ -28,6 +29,9 @@ export default function Loginscreen(){
        const user={email,password}
        dispatch(loginUser(user))
     }
+   
+
+   
     return(
         <div>
              <div className="row justify-content-center mt-5">
@@ -43,7 +47,7 @@ export default function Loginscreen(){
                         <input required type={passwordShown ? "text" : "password"} placeholder="password" className="form-control" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>  
                         <button onMouseEnter={Password} onMouseLeave={Password}><i class="fa fa-eye" aria-hidden="true"></i></button> 
                         <br/>
-          
+                        
                         <button onClick={login} className='btn mt-2 mb-2'>Login</button>
                        <br/>
                         <a style={{color:'black'}} href="/register" className='mt-2'>Înregistrare</a>

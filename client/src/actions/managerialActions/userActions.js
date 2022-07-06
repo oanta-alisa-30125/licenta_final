@@ -55,3 +55,15 @@ export const deleteUser=(userid)=>async dispatch=>{
         console.log(error)
     }
 }
+
+export const makeAdmin=(userid)=>async dispatch=>{
+    try{
+        const response=await axios.post('/api/users/makeadmin',{userid})
+    console.log(response);
+    alert('Status utilizator schimbat cu succes')
+    const user=await axios.get('/api/users/getallusers')
+    dispatch({type:'GET_USERS_SUCCESS', payload:user.data})
+    }catch(error){
+        console.log(error)
+    }
+}

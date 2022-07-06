@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Loading from '../../../components/layoutComponents/Loading'
 import Error from '../../../components/layoutComponents/Error'
-import {getAllUsers,deleteUser} from '../../../actions/managerialActions/userActions'
+import {getAllUsers,deleteUser,makeAdmin} from '../../../actions/managerialActions/userActions'
 
 export default function Userlist(){
     const dispatch=useDispatch()
@@ -26,6 +26,7 @@ export default function Userlist(){
                     <th scope="col">Nume</th>
                     <th scope="col">Email</th>
                     <th scope="col">Șterge</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@ export default function Userlist(){
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td><i className='fa fa-trash' onClick={()=>{dispatch(deleteUser(user._id))}}></i></td>
+                        <td>{user.isAdmin ? <h1>Admin</h1>:<button className='btn' onClick={()=>{dispatch(makeAdmin(user._id))}}>Make Admin</button>}</td>
                     </tr>
                 })}
             </tbody>
