@@ -2,7 +2,7 @@ export const getAllDrinksReducer=(state={drinks:[]},action)=>{
     switch(action.type)
     {
         case 'GET_DRINKS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_DRINKS_SUCCESS':return{

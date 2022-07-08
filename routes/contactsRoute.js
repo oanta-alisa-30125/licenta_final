@@ -1,11 +1,11 @@
 const { response } = require("express");
-const express=require("express");//specifica pt express router
-const router=express.Router();//specifica pt express router
-const Contact=require("../models/contactModel") //asa am importat user model 
+const express=require("express");
+const router=express.Router();
+const Contact=require("../models/contactModel") 
 
 router.post("/messages", async(req,res)=>{
     const {name,email,mesaj}=req.body
-    const newContact=new Contact({name, email,mesaj}) //asa creez modelul
+    const newContact=new Contact({name, email,mesaj}) 
 
     try{
         newContact.save()

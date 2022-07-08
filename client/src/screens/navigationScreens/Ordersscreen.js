@@ -13,8 +13,6 @@ export default function Ordersscreen(){
     useEffect(()=>{
         dispatch(getUserOrders())
     },[])
-    //luam doar primii 10 digiti din mongodb pt data
-    //
     return(
         <div className='mt-3'>
             <h2 style={{fontSize:'35px', fontFamily:'georgia'}}>Comenzile mele</h2>
@@ -61,7 +59,6 @@ export default function Ordersscreen(){
                             <p>Data comenzii:{order.createdAt.substring(0,10)}</p>
                             <p>Număr tranzacție:<br/>{order.transactionId}</p>
                             <p>Număr comandă:<br/>{order._id}</p>
-
                             </div>
                         </div>
                         

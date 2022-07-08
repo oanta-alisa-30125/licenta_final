@@ -8,10 +8,8 @@ const Dish=require('./models/dishModel')
 const Desert=require('./models/desertModel')
 const Drink=require('./models/drinkModel')
 
-
 const app=express();
-const db=require("./db"); //importam db
-
+const db=require("./db"); 
 
 const pizzaModel = require("./models/pizzaModel");
 const burgerModel = require("./models/burgerModel");
@@ -33,7 +31,6 @@ const booksRoute=require('./routes/booksRoute')
 const tablesRoute=require('./routes/tablesRoute')
 
 
-
 const ordersRoute=require('./routes/ordersRoute')
 const burgersRoute=require('./routes/burgersRoute')
 const pastasRoute=require('./routes/pastasRoute')
@@ -44,9 +41,7 @@ const desertsRoute=require('./routes/desertsRoute')
 const drinksRoute=require('./routes/drinksRoute')
 
 
-
-
-app.use('/api/pizzas/',pizzasRoute)//aici specific url ul
+app.use('/api/pizzas/',pizzasRoute)
 app.use('/api/users/', userRoute)
 app.use('/api/books/', booksRoute)
 app.use('/api/tables/',tablesRoute)
@@ -65,15 +60,11 @@ if(process.env.NODE_ENV=='production')
 {
     app.use('/',express.static('client/build'))
     app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'client/build/index.html'))//we have to send the entrypoint of the client
+        res.sendFile(path.resolve(__dirname,'client/build/index.html'))
     })
 }
 
-
-
-
-
-const port=process.env.PORT||5000; //[prt 5000 pt backend port si 3000 pt frontend port]
+const port=process.env.PORT||5000; 
 
 app.listen(port,()=>"Server running on port port");
 

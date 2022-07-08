@@ -29,16 +29,32 @@ export default function OpenScreen() {
     const [hour, sethour] = useState("");
     const [mesaj, setmesaj] = useState("");
 
+    function contineCaractereSpecialeName(str) {
+        const specialChars = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        return specialChars.test(str);
+      }
+
+      function contineCaractereSpecialeEmail(str) {
+        const specialChars = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+        return specialChars.test(str);
+      }
+
+      function contineLitere(str) {
+        return /[a-zA-Z]/.test(str);
+      }
+
     function book() {
         var booking = {};
         const pickedTime = date + " " +hour;
         console.log(tables);
         let ok= 0;
+
         for(let i=0;i<tables.length; i++){
             
             if(tables[i].bookings.indexOf(pickedTime) < 0)
              {
                  var table= tables[i].name;
+                 
                  booking = {
                     name,
                     email,
@@ -57,17 +73,14 @@ export default function OpenScreen() {
                  dispatch(editTable(tabletoedit));
                  ok = 1 ;
                  break;
-                
              }
-             
-        }
+        } 
         if(ok==1){
             dispatch(newBook(booking))
             console.log(booking);
         }
         else
             alert("Nu mai există mese disponibile pentru acea dată și oră")
-    
     }
 
 
@@ -77,7 +90,15 @@ export default function OpenScreen() {
 
 
     function sendMessage() {
-
+        if(contineCaractereSpecialeName(name) || contineCaractereSpecialeEmail(email)){
+            alert("Introduceți date valide")
+           
+        }
+        else if(!contineLitere(name) || !contineLitere(email)){
+            alert("Toate campurile trebuie completate")
+            
+        }
+        else{
         const contact = {
             name,
             email,
@@ -86,16 +107,10 @@ export default function OpenScreen() {
         console.log(contact);
         dispatch(newContact(contact))
         alert("mesaj trimis")
-
-
-
-    }
+    }}
    
-
     return (
-
         <>
-           
            <div id="home_section" className='row landing'  style={{ backgroundImage:`url(${landing})`, backgroundPosition: 'center',backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width: '100vw',
         height: '110vh'}}>
                 <div className='col-md-12'>
@@ -125,28 +140,17 @@ export default function OpenScreen() {
                 </div>
 
             </div>
-        
-        
-
-        
 
                 <div id="book_section" className='row'>
-               
-
                     <div className='col-sm'>
                     <h2 style={{ fontSize: '50px', fontFamily:'georgia'}}>Rezervare</h2>
                         <img src={reservation}  width="400" height="250" paddingTop="50" />
                     </div>
-
-
                     <div className='col-sm mt-5 ml-5'>
-
                         <form style={{marginBottom:'20px', width: "75%" }}>
                         <Space direction="vertical" >
                                 <DatePicker format='DD-MM-YYYY' onChange={filterDate} className='mt-3' />
                             </Space>
-
-                            
                             <select className="custom-select custom-select-sm ml-5" type="text" placeholder="hour" value={hour} onChange={(e) => { sethour(e.target.value) }} style={{width:"35%", height:"40px", marginBottom:"3%"}}>
                                 <option selected>Ora</option>
                                 <option value="10:00">10:00</option>
@@ -163,12 +167,10 @@ export default function OpenScreen() {
                                 <option value="21:00">21:00</option>
                             </select>
 
-
                             <input className='form-control' type="text" placeholder="nume" value={name} onChange={(e) => { setname(e.target.value) }} />
                             <input className='form-control' type="text" placeholder="email" value={email} onChange={(e) => { setemail(e.target.value) }} />
                             <input className='form-control' type="text" placeholder="telefon" value={phone} onChange={(e) => { setphone(e.target.value) }} />
                             
-
                             <a href="#home_section">
                             <button onClick={book} className='btn mb-5 mt-5' type='submit'>Rezervă</button>
                             </a>
@@ -176,18 +178,8 @@ export default function OpenScreen() {
                     </div>
                 </div>
 
-            
-
-
-
-
-
-
-           
-
         <div id="aboutus_section" className='row'>
             <div className='col-sm'>
-        
 
                 <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
@@ -213,17 +205,7 @@ export default function OpenScreen() {
 
             </div>
         </div>
-           
-
-
-
-            
-                
-            
                     <div id="orar_section" className='row'>
-                    
-                     
-                    
                         <div className='col-sm'>
                         <h2 id="shadowww" style={{ fontSize: '50px',marginTop:'10%',color:"white"}}>Orar</h2>
                             <p id="shadowww" style={{ marginTop:'10%', fontSize: '20px', color:"white" }}>Luni - Joi: 8:00 — 23:15<br />Vineri: 8:00 — 01:00<br />Sambata 9:00 — 01:00<br />Duminica: 9:00 — 23:15</p>
@@ -233,20 +215,13 @@ export default function OpenScreen() {
                         </div>
 
                     </div>
-               
-
-
-           
             
-                
-                
                     <div id="contact_section" className='row'  >
                     
                         <div className='col-sm'>
                         <h2 id="shadowww" style={{ color: 'white' }}>Lasa-ne un mesaj!</h2>
                             <div style ={{display: 'flex',  justifyContent:'center', alignItems:'center',}}>
                                 <form style={{ width: '500px', margin: '30px' }}>
-
 
                                     <div className="form-group" >
 
@@ -281,12 +256,8 @@ export default function OpenScreen() {
                         </div></div>
                         </div>
                     </div>
-                    
-              
             </>
-
     )
-
 }
 
 

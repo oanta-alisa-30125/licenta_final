@@ -43,6 +43,5 @@ function App() {
     </div>
   );
 }
-//dupa navbar pt ca navbar trebuie sa fie prezent in toate paginile
-//browser outer ne ajuta sa naviam de pe o pagina pe alta
+
 export default App;

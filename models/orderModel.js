@@ -7,10 +7,10 @@ const orderSchema=mongoose.Schema({
     orderItems:[],
     shippingAddress:{type:Object},
     orderAmount:{type:Number,require},
-    isDelivered:{type:Boolean,require,default:false},//order status
+    isDelivered:{type:Boolean,require,default:false},
     transactionId:{type:String,require}
 },{
-    timestamps:true//to check the date
+    timestamps:true
 })
 
 module.exports=mongoose.model('orders',orderSchema)

@@ -31,7 +31,7 @@ export default function Userlist(){
             </thead>
             <tbody>
                 {users&&users.map(user=>
-                {//conditional rendering if users is present then user.map
+                {
                     return <tr>
                         <td>{user._id}</td>
                         <td>{user.name}</td>

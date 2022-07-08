@@ -25,9 +25,8 @@ export default function Checkout({subtotal}){
         <div>
             {loading && (<Loading/>)}
             {success && (<Success success='Comanda s-a inregistrat cu success'/>)}
-            {error && (<Error error='Something went wrond'/>)}
+            {error && (<Error error='Eroare'/>)}
             <StripeCheckout
-            //inmultim cu 100 pt ca in stripe se fac centi
             amount={subtotal*100}
             shippingAddress
             token={tokenHander}

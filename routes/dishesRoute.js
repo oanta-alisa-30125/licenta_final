@@ -17,7 +17,6 @@ router.post("/adddish",async(req,res)=>{
         const newdish=new Dish({
             name:dish.name,
             image:dish.image,
-            varients:['small','medium','large'],
             description:dish.description,
             category:dish.category,
             price:dish.price

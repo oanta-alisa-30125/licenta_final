@@ -2,7 +2,7 @@ export const getAllPastasReducer=(state={pastas:[]},action)=>{
     switch(action.type)
     {
         case 'GET_PASTAS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true,
             ...state
         }
         case 'GET_PASTAS_SUCCESS':return{

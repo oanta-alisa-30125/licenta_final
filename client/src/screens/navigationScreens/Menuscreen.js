@@ -24,7 +24,7 @@ export default function Menuscreen() {
 
 
     const pizzasstate = useSelector(state => state.getAllPizzasReducer)
-    const { pizzas, error, loading } = pizzasstate //we can track the request
+    const { pizzas, error, loading } = pizzasstate 
 
     const burgersstate = useSelector(state => state.getAllBurgersReducer)
     const { burgers} = burgersstate
@@ -48,8 +48,6 @@ export default function Menuscreen() {
     const { drinks} = drinksstate
 
 
-
-
     useEffect(() => {
         dispatch(getAllPizzas())
         dispatch(getAllBurgers())
@@ -59,16 +57,9 @@ export default function Menuscreen() {
         dispatch(getAllDishes())
         dispatch(getAllDeserts())
         dispatch(getAllDrinks())
-    }, [])//dispatch the action
+    }, [])
 
-
-
-
-    ////daca e loadin asteptm pt raspuns(adica Loading)
-    //else daca avem erori atunci avem de aratat Something went wrong
-    //daca nu e nici loading si nici error in else avem de rendered componentele adica avem pizzas array
-    //key pt ca each child shoul have a unique key
-    return (//cu row creez un nou rand
+    return (
         <div>
             <div className='mt-3'>
              <Filter/>
@@ -122,11 +113,8 @@ export default function Menuscreen() {
             
             {pastas.length >0 && (<h1>PASTE</h1>) }
             <div className='row justify-content-center'>
-
-            
            
             {(
-                   
                         pastas.map((pasta) => {
                             
                             return(
@@ -145,14 +133,10 @@ export default function Menuscreen() {
             </section>
             
             <section id="salads_section">
-            
             {salads.length >0 && (<h1>SALATE</h1>) }
             <div className='row justify-content-center'>
 
-            
-           
             {(
-                   
                         salads.map((salad) => {
                             
                             return(
@@ -174,9 +158,6 @@ export default function Menuscreen() {
             
             {grills.length >0 && (<h1>GRILL</h1>) }
             <div className='row justify-content-center'>
-
-            
-           
             {(
                    
                    grills.map((grill) => {
@@ -201,8 +182,6 @@ export default function Menuscreen() {
             {dishes.length >0 && (<h1>GARNITURI</h1>) }
             <div className='row justify-content-center'>
 
-            
-           
             {(
                    
                    dishes.map((dish) => {
@@ -226,8 +205,6 @@ export default function Menuscreen() {
             
             {deserts.length >0 && (<h1>DESERT</h1>) }
             <div className='row justify-content-center'>
-
-            
            
             {(
                    
@@ -253,8 +230,6 @@ export default function Menuscreen() {
             {drinks.length >0 && (<h1>BAUTURI</h1>) }
             <div className='row justify-content-center'>
 
-            
-           
             {(
                    drinks.map((drink) => {
                             return(

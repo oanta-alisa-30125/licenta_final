@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux' //pt ca o sa avem mai mult decat un reducer
+import { combineReducers } from 'redux' 
 
 import { createStore, applyMiddleware } from 'redux'
 
@@ -23,7 +23,7 @@ import { getAllMessagesReducer, newContactReducer } from './reducers/managerialR
 import { getAllBookingsReducer, newBookReducer } from './reducers/managerialReducers/bookingReducer'
 import { getAllTablesReducer, editTableReducer } from './reducers/managerialReducers/tableReducer'
 const finalReducer = combineReducers({
-    getAllPizzasReducer: getAllPizzasReducer, //key:value
+    getAllPizzasReducer: getAllPizzasReducer, 
     cartReducer: cartReducer,
     registerUserReducer:registerUserReducer,
     loginUserReducer:loginUserReducer,
@@ -71,10 +71,10 @@ const finalReducer = combineReducers({
 })
 
 
-const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [] //aici stocam in localstorage ca sa nu se stearga cand dam refresh
+const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [] 
 
 const currentUser=localStorage.getItem('currentUser')?JSON.parse(localStorage.getItem('currentUser')):null
-//daca exista variabila cu currentuser trebuie sa o trimitem
+
 
 const initialState = {
     cartReducer: {
@@ -83,10 +83,8 @@ const initialState = {
     loginUserReducer:{
         currentUser:currentUser
     },
-
 }
 const composeEnhancers = composeWithDevTools({})
-//aici creem storeul
 const store = createStore(finalReducer, initialState, composeEnhancers(applyMiddleware(thunk)))
 
 export default store

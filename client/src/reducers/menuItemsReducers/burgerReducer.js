@@ -2,7 +2,7 @@ export const getAllBurgersReducer=(state={burgers:[]},action)=>{
     switch(action.type)
     {
         case 'GET_BURGERS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_BURGERS_SUCCESS':return{

@@ -1,7 +1,7 @@
 const { response } = require("express");
-const express=require("express");//specifica pt express router
-const router=express.Router();//specifica pt express router
-const User=require("../models/userModel") //asa am importat user model 
+const express=require("express");
+const router=express.Router();
+const User=require("../models/userModel") 
 
 router.post("/register", async(req,res)=>{
     const {name,email,password}=req.body
@@ -10,7 +10,7 @@ router.post("/register", async(req,res)=>{
         if(user.length>0)
             res.status(400).json({message:'Emailul există'});
         else{
-            const newUser=new User({name, email,password}) //asa creez modelul
+            const newUser=new User({name, email,password}) 
             newUser.save()
             res.send('User Registered successfully')
         }
@@ -19,12 +19,11 @@ router.post("/register", async(req,res)=>{
     }
 });
 
-router.post("/login", async(req,res)=>{//login endpoint
+router.post("/login", async(req,res)=>{
     const{email,password}=req.body
     try{
         const user=await User.find({email,password})
-        //cautam in mongodb obiecte si daca se potriveste emailul cu parola vom avea user deci valoarea lauser creste cu 1
-        if(user.length>0)//adica userul este deja prezent in mongodb
+        if(user.length>0)
         {
             const currentUser={
                 name:user[0].name,

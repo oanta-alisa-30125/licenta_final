@@ -17,7 +17,6 @@ router.post("/addgrill",async(req,res)=>{
         const newgrill=new Grill({
             name:grill.name,
             image:grill.image,
-            varients:['small','medium','large'],
             description:grill.description,
             category:grill.category,
             price:grill.price

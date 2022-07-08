@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllPizzas=()=>async dispatch=>{//dispatch=redux thunk function
+export const getAllPizzas=()=>async dispatch=>{
     dispatch({type:'GET_PIZZAS_REQUEST'})
 
     try{
@@ -31,7 +31,7 @@ export const editPizza=(editedpizza)=>async dispatch=>{
         const response=await axios.post('/api/pizzas/editpizza',{editedpizza})
         console.log(response);
         dispatch({type:'EDIT_PIZZA_SUCCESS'})
-      //  window.location.href='/admin/pizzaslist'
+        window.location.href='/admin/pizzaslist'
    
     }catch(error){
         dispatch({type:'EDIT_PIZZA_FAILED',payload:error})
@@ -65,7 +65,7 @@ export const deletePizza=(pizzaid)=>async dispatch=>{
     }
 }
 
-export const filterPizzas=(searchkey,category)=>async dispatch=>{//dispatch=redux thunk function
+export const filterPizzas=(searchkey,category)=>async dispatch=>{
     
     var filteredPizzas;
     dispatch({type:'GET_PIZZAS_REQUEST'})

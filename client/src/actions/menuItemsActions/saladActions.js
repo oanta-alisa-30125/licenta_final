@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllSalads=()=>async dispatch=>{//dispatch=redux thunk function
+export const getAllSalads=()=>async dispatch=>{
     dispatch({type:'GET_SALADS_REQUEST'})
 
     try{
@@ -13,7 +13,7 @@ export const getAllSalads=()=>async dispatch=>{//dispatch=redux thunk function
     
 }
 
-export const filterSalads=(searchkey,category)=>async dispatch=>{//dispatch=redux thunk function
+export const filterSalads=(searchkey,category)=>async dispatch=>{
     
     var filteredSalads;
     dispatch({type:'GET_SALADS_REQUEST'})
@@ -51,7 +51,7 @@ export const editSalad=(editedsalad)=>async dispatch=>{
         const response=await axios.post('/api/salads/editsalad',{editedsalad})
         console.log(response);
         dispatch({type:'EDIT_SALAD_SUCCESS'})
-      //  window.location.href='/admin/pizzaslist'
+        window.location.href='/admin/saladslist'
    
     }catch(error){
         dispatch({type:'EDIT_SALAD_FAILED',payload:error})

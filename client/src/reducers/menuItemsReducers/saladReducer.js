@@ -2,7 +2,7 @@ export const getAllSaladsReducer=(state={salads:[]},action)=>{
     switch(action.type)
     {
         case 'GET_SALADS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_SALADS_SUCCESS':return{

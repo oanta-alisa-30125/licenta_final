@@ -2,7 +2,7 @@ export const getAllDesertsReducer=(state={deserts:[]},action)=>{
     switch(action.type)
     {
         case 'GET_DESERTS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true,
             ...state
         }
         case 'GET_DESERTS_SUCCESS':return{

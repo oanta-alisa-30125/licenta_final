@@ -1,5 +1,4 @@
-export const addToCart= (pizza, quantity, varient) => (dispatch, getState) => {//trb sa dispatch pizza, cantitate,varianta
-//cu ajutorul payload trimitem obiectul cartItem
+export const addToCart= (pizza, quantity, varient) => (dispatch, getState) => {
     var cartItem = {
         name: pizza.name,
         _id: pizza._id,
@@ -7,7 +6,7 @@ export const addToCart= (pizza, quantity, varient) => (dispatch, getState) => {/
         quantity: Number(quantity),
         varient: varient,
         unitPrice: pizza.prices[0][varient],
-        price: pizza.prices[0][varient] * Number(quantity) //selector
+        price: pizza.prices[0][varient] * Number(quantity) 
 
 }
 
@@ -29,8 +28,8 @@ localStorage.setItem('cartItems',JSON.stringify(cartItems))
 }}
 
 
-export const addToCartOther= (item, quantity) => (dispatch, getState) => {//trb sa dispatch pizza, cantitate,varianta
-    //cu ajutorul payload trimitem obiectul cartItem
+export const addToCartOther= (item, quantity) => (dispatch, getState) => {
+    
     if(item.quantity !=null)
 
         if(item.varient!=null)
@@ -88,7 +87,6 @@ export const addToCartOther= (item, quantity) => (dispatch, getState) => {//trb 
 export const deleteFromCart=(item)=>(dispatch, getState)=>{
 
 dispatch({type:'DELETE_FROM_CART',payload:item})
-//dupa stergere trebuie updatat cosul:
 const cartItems=getState().cartReducer.cartItems 
 localStorage.setItem('cartItems',JSON.stringify(cartItems))
 
@@ -100,7 +98,6 @@ export const deleteEverythingFromCart=()=>(dispatch, getState)=>{
     for(let i=0; i< cartItems.length;i++){
         dispatch({type:'DELETE_FROM_CART',payload:cartItems[i]})
     }
-    //dupa stergere trebuie updatat cosul:
     const cartItemsAfter=getState().cartReducer.cartItems 
     localStorage.setItem('cartItems',JSON.stringify(cartItemsAfter))
     

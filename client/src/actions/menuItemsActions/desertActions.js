@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllDeserts=()=>async dispatch=>{//dispatch=redux thunk function
+export const getAllDeserts=()=>async dispatch=>{
     dispatch({type:'GET_DESERTS_REQUEST'})
 
     try{
@@ -13,7 +13,7 @@ export const getAllDeserts=()=>async dispatch=>{//dispatch=redux thunk function
     
 }
 
-export const filterDeserts=(searchkey,category)=>async dispatch=>{//dispatch=redux thunk function
+export const filterDeserts=(searchkey,category)=>async dispatch=>{
     
     var filteredDeserts;
     dispatch({type:'GET_DESERTS_REQUEST'})
@@ -51,7 +51,7 @@ export const editDesert=(editeddesert)=>async dispatch=>{
         const response=await axios.post('/api/deserts/editdesert',{editeddesert})
         console.log(response);
         dispatch({type:'EDIT_DESERT_SUCCESS'})
-      //  window.location.href='/admin/pizzaslist'
+      window.location.href='/admin/desertslist'
    
     }catch(error){
         dispatch({type:'EDIT_DESERT_FAILED',payload:error})

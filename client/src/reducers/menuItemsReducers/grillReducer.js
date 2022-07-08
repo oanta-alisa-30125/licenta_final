@@ -2,7 +2,7 @@ export const getAllGrillsReducer=(state={grills:[]},action)=>{
     switch(action.type)
     {
         case 'GET_GRILLS_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_GRILLS_SUCCESS':return{

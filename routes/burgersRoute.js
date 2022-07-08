@@ -5,14 +5,10 @@ const Burger=require('../models/burgerModel')
 
 router.get("/getallburgers",async(req,res)=>{
     try{
-        //const burgers=await Burger.find({})
-        Burger.find({}).then(burgers => {
-            res.send(burgers)
-        })
-        //res.send(burgers)
+        const burgers=await Burger.find({}) 
+        res.send(burgers)
     } catch(error){
-        //return res.status(400).json({message:error});
-        return error.message;
+        return res.status(400).json({message:error});
     }
 });
 

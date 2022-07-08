@@ -3,7 +3,7 @@ export const newContact=(contact)=>async dispatch=>{
 
     dispatch({type:'CONTACT_REQUEST'})
     try{
-        const response=await axios.post('/api/contacts/messages',contact) //asa trimitem datele catre backend
+        const response=await axios.post('/api/contacts/messages',contact)
         console.log(response);
         dispatch({type:'CONTACT_SUCCESS'})
     }catch (error){

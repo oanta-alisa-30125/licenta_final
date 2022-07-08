@@ -13,7 +13,7 @@ export default function Registerscreen() {
     const [password, setpassword] = useState("");
     const [cpassword, setcpassword] = useState("");
     const registerstate=useSelector(state=>state.registerUserReducer)
-    const {error,loading,success}=registerstate//luate din userreducer
+    const {error,loading,success}=registerstate
     const dispatch=useDispatch()
     
     
@@ -32,7 +32,7 @@ export default function Registerscreen() {
             return /[a-zA-Z]/.test(str);
           }
         function register(){
-            if(password!==cpassword) //daca parolele sunt matchy la fel
+            if(password!==cpassword)
             {
                 alert("Parolele nu se potrivesc")
             } 

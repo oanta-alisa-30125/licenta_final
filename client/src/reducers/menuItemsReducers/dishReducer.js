@@ -2,7 +2,7 @@ export const getAllDishesReducer=(state={dishes:[]},action)=>{
     switch(action.type)
     {
         case 'GET_DISHES_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_DISHES_SUCCESS':return{

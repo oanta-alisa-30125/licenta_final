@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllPastas=()=>async dispatch=>{//dispatch=redux thunk function
+export const getAllPastas=()=>async dispatch=>{
     dispatch({type:'GET_PASTAS_REQUEST'})
 
     try{
@@ -12,7 +12,7 @@ export const getAllPastas=()=>async dispatch=>{//dispatch=redux thunk function
     }
     
 }
-export const filterPastas=(searchkey,category)=>async dispatch=>{//dispatch=redux thunk function
+export const filterPastas=(searchkey,category)=>async dispatch=>{
     
     var filteredPastas;
     dispatch({type:'GET_PASTAS_REQUEST'})

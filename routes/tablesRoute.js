@@ -1,7 +1,7 @@
 const { response } = require("express");
-const express=require("express");//specifica pt express router
-const router=express.Router();//specifica pt express router
-const Table=require("../models/tableModel") //asa am importat user model 
+const express=require("express");
+const router=express.Router();
+const Table=require("../models/tableModel") 
 
 router.get("/getalltables", async(req,res)=>{
     try{

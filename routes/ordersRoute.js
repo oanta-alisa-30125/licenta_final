@@ -2,11 +2,9 @@ const express=require("express");
 const router=express.Router();
 const { v4:uuidv4 }=require('uuid');
 const stripe=require("stripe")("sk_test_51Kaz5vJCgqMIiSUC45tMgOsULtZTj46XjbB2cYwwzbjW91iUkJgig2OHPxNk4mm036tZkfRbcTeAVtpWnSmKtCfP00tvTihaM0")
-
 const Order=require('../models/orderModel')
 
 router.post("/placeorder",async(req,res)=>{
-    //parametrii din frontend:
     const {token,subtotal,currentUser,cartItems}=req.body
 
     try {
@@ -14,14 +12,12 @@ router.post("/placeorder",async(req,res)=>{
             email:token.email,
             source:token.id
         })
-
         const payment=await stripe.charges.create({
             amount:subtotal*100,
             currency:'RON',
             customer:customer.id,
             receipt_email:token.email
         },{
-            //unic pt fiecare comand
             idempotencyKey:uuidv4()
         }
         )
@@ -58,11 +54,10 @@ router.post("/placeorder",async(req,res)=>{
 router.post("/getuserorders",async(req,res)=>{
     const{userid}=req.body
     try {
-        const orders=await Order.find({userid:userid}).sort({_id:-1})//sa fie sortate comenzile dupa data
+        const orders=await Order.find({userid:userid}).sort({_id:-1})
         res.send(orders)
     } catch (error) {
         return res.status(400).json({message:'something went wrong', error});
-        
     }
 });
 

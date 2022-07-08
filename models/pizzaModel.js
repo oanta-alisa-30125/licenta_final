@@ -1,10 +1,8 @@
 const mongoose=require("mongoose");
-//ia datele din baza de date
 const pizzaSchema=mongoose.Schema({
-   //aici scriu proprietatile
     name:{type:String,require},
-    varients: [] ,//array
-    prices: [] ,//array
+    varients: [] ,
+    prices: [] ,
     category: {type:String,require} ,
     image: {type:String,require} ,
     description: {type:String, require}
@@ -12,5 +10,5 @@ const pizzaSchema=mongoose.Schema({
     timestamps:true,
 })
 
-const pizzaModel=mongoose.model('pizzas',pizzaSchema) //pizzas=numele din mongodb a colectiei
+const pizzaModel=mongoose.model('pizzas',pizzaSchema) 
 module.exports=pizzaModel

@@ -5,16 +5,14 @@ import { loginUser } from '../../actions/managerialActions/userActions'
 import Loading from  '../../components/layoutComponents/Loading'
 import Error from '../../components/layoutComponents/Error'
 export default function Loginscreen(){
-   //HOOKS
+   
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
     const [passwordShown, setPasswordShown] = useState(false);
     const dispatch=useDispatch()
    
-   //if the user is already present in the aplication o sa fie redirectionat catre home page:
     const loginstate=useSelector(state=>state.loginUserReducer)
-    const {loading,error}=loginstate //nu ne mai intereseaza de succes pt ca daca este success o sa fie direct redirectionat catre homepage
-        // Initialize a boolean state
+    const {loading,error}=loginstate 
       
         const Password = () => {
           setPasswordShown(!passwordShown);
@@ -29,9 +27,7 @@ export default function Loginscreen(){
        const user={email,password}
        dispatch(loginUser(user))
     }
-   
 
-   
     return(
         <div>
              <div className="row justify-content-center mt-5">
@@ -40,8 +36,6 @@ export default function Loginscreen(){
                     {error && (<Error error='Credențiale invalide'/>)}
                     <h2 className='text-center' style={{ fontsize: '35px' }}>Login</h2>
                   
-                    
-                    
                     <div>
                         <input required type="text" placeholder="email" className="form-control" value={email} onChange={(e)=>{setemail(e.target.value)}} />
                         <input required type={passwordShown ? "text" : "password"} placeholder="password" className="form-control" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>  

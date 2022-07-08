@@ -1,4 +1,4 @@
-/* eslint-disable no-template-curly-in-string */
+
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllPizzas, deletePizza } from '../../../actions/menuItemsActions/pizzaActions'

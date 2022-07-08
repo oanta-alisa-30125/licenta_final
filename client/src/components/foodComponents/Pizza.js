@@ -5,10 +5,10 @@ import { addToCart } from "../../actions/managerialActions/cartActions";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default function Pizza({ pizza }) {
-    //initializare aos
+    
     AOS.init()
-    const [quantity, setquantity] = useState(1)//by default=1
-    const [varient, setvarient] = useState('mică')//by default=small
+    const [quantity, setquantity] = useState(1)
+    const [varient, setvarient] = useState('mică')
 
     const [show, setShow] = useState(false);
 
@@ -17,13 +17,12 @@ export default function Pizza({ pizza }) {
     const dispatch = useDispatch()
 
     function addtocart() {
-        dispatch(addToCart(pizza, quantity, varient)) //dispatch the action ITEMS LA FEL CA CARTACTIONS
+        dispatch(addToCart(pizza, quantity, varient)) 
     }
 
 
     return (
-        //m-1 pt a poztiona coresc adica adauga margine de 10
-        //w-100 ca sa fie una intr o parte si una in cealalta deci pozitionate corect
+        
         <div data-aos='fade-up' className="shadow p-3 m-3 bg-white rounded">
             <div onClick={handleShow}>
                 <h1>{pizza.name}</h1>
@@ -47,7 +46,7 @@ export default function Pizza({ pizza }) {
                     <p style={{ verticalAlign: 'middle', display: 'table-cell'}} >Cantitate</p>
 
                     <select className='form-control' value={quantity} onChange={(e) => { setquantity(e.target.value) }}>
-                        {[...Array(10).keys()].map((x, i) => {//map de doua chestii pt ca e array si x e obiectul si i este indexul care pleaca de la 0 de aia i+1
+                        {[...Array(10).keys()].map((x, i) => {
                             return <option value={i + 1}>{i + 1}</option>
                         })}
                     </select>

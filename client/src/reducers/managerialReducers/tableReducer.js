@@ -2,7 +2,7 @@ export const getAllTablesReducer=(state={tables:[]},action)=>{
     switch(action.type)
     {
         case 'GET_TABLES_REQUEST':return{
-            loading:true, //request e trimis
+            loading:true, 
             ...state
         }
         case 'GET_TABLES_SUCCESS':return{

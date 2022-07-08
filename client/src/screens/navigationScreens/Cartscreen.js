@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {addToCart, addToCartOther} from '../../actions/managerialActions/cartActions'
 import { deleteFromCart } from "../../actions/managerialActions/cartActions"
 import Checkout from "../../components/layoutComponents/Checkout"
-import AOS from 'aos' //pot sa il pun si in app.js ca sa nu il mai copiez peste tot
+import AOS from 'aos' 
 import 'aos/dist/aos.css'
 
 export default function Cartscreen(){
@@ -12,9 +12,6 @@ export default function Cartscreen(){
     const cartItems=cartstate.cartItems
     const { currentUser } = useSelector(state => state.loginUserReducer)
     
-   
-
-
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
 

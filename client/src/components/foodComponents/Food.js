@@ -5,9 +5,9 @@ import { addToCartOther } from "../../actions/managerialActions/cartActions";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default function Food({ item }) {
-    //initializare aos
+
     AOS.init()
-    const [quantity, setquantity] = useState(1)//by default=1
+    const [quantity, setquantity] = useState(1)
 
     const [show, setShow] = useState(false);
 
@@ -16,13 +16,12 @@ export default function Food({ item }) {
     const dispatch = useDispatch()
 
     function addtocart() {
-        dispatch(addToCartOther(item, quantity)) //dispatch the action ITEMS LA FEL CA CARTACTIONS
+        dispatch(addToCartOther(item, quantity)) 
     }
 
 
     return (
-        //m-1 pt a poztiona coresc adica adauga margine de 10
-        //w-100 ca sa fie una intr o parte si una in cealalta deci pozitionate corect
+       
         <div data-aos='fade-up' className="shadow p-3 mb-3 bg-white rounded">
             <div onClick={handleShow}>
                 <h1>{item.name}</h1>
@@ -34,7 +33,7 @@ export default function Food({ item }) {
                 <div >
                     <p style={{ verticalAlign: 'middle', display: 'table-cell'}}>Cantitate</p>
                     <select className='form-control' value={quantity} onChange={(e) => { setquantity(e.target.value) }}>
-                        {[...Array(10).keys()].map((x, i) => {//map de doua chestii pt ca e array si x e obiectul si i este indexul care pleaca de la 0 de aia i+1
+                        {[...Array(10).keys()].map((x, i) => {
                             return <option value={i + 1}>{i + 1}</option>
                         })}
                     </select>

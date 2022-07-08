@@ -15,13 +15,13 @@ export const placeOrder=(token, subtotal)=>async (dispatch, getState)=>{
     }
 }
 
-export const getUserOrders=()=>async (dispatch, getState)=>{//dispatch=redux thunk function
+export const getUserOrders=()=>async (dispatch, getState)=>{
     
     const currentUser=getState().loginUserReducer.currentUser
    
     dispatch({type:'GET_USER_ORDERS_REQUEST'})
 
-    try{//post pt ca trimitem datele catre backend si get cand le luam din backend
+    try{
         const response=await axios.post('/api/orders/getuserorders',{userid:currentUser._id})
         console.log(response);
         dispatch({type:'GET_USER_ORDERS_SUCCESS', payload:response.data})

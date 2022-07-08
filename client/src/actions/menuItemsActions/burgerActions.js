@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getAllBurgers=()=>async dispatch=>{//dispatch=redux thunk function
+export const getAllBurgers=()=>async dispatch=>{
     dispatch({type:'GET_BURGERS_REQUEST'})
 
     try{
@@ -12,7 +12,7 @@ export const getAllBurgers=()=>async dispatch=>{//dispatch=redux thunk function
     }
 }
 
-export const filterBurgers=(searchkey,category)=>async dispatch=>{//dispatch=redux thunk function
+export const filterBurgers=(searchkey,category)=>async dispatch=>{
     var filteredBurgers;
     dispatch({type:'GET_BURGERS_REQUEST'})
     try{
